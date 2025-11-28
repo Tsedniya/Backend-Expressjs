@@ -27,7 +27,6 @@ app.get('/api/data', (req, res) => {
 app.post('/api/data', (req,res)=>{
     const newEntery = req.body
     console.log(newEntery)
-    data.push()
     res.sendStatus(201)
 })
 

@@ -9,5 +9,5 @@ POST http://localhost:3000/api/data
 Content-Type: application/json
 
 {
-  "name": "puth"
+  "name" :"tsedi"
 }
