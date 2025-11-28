@@ -1,0 +1,17 @@
+# delete
+DELETE http://localhost:3000/api/data
+
+### Get homepage
+GET http://localhost:3000/
+
+### Get dashboard
+GET http://localhost:3000/dashboard
+
+### Post data
+POST http://localhost:3000/api/data
+Content-Type: application/json
+
+{
+  "name" :"tsedi",
+  "friend":"beti"
+}
