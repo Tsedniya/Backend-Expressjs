@@ -17,16 +17,21 @@ app.get('/dashboard', (req, res)=>{
 
 app.get('/api/data', (req, res) => {
     res.send(`
-        <body style="background:red; color:blue;">
+        <body style="background:white; color:blue;">
             <h1>DATA:</h1>
             <p>${JSON.stringify(data)}</p>
         </body>
     `)
 })
+// only saved in memory
 
 app.post('/api/data', (req,res)=>{
     const newEntery = req.body
     console.log(newEntery)
+    data.push(
+        newEntery.name,
+        newEntery.friend
+    )
     res.sendStatus(201)
 })
 
