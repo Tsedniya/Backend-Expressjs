@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+app.use(express.json())
 // serve static files from src/public
 app.use(express.static(path.join(__dirname, 'public')));
 
