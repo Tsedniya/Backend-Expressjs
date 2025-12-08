@@ -15,6 +15,6 @@ router.put('/:id',(req,res)=>{})
 
 //delete a todo
 
-//router.delete('/:id',(req,res)=>{})
+router.delete('/:id',(req,res)=>{})
 
 export default router
