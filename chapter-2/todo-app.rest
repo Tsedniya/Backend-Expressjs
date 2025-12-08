@@ -1,4 +1,26 @@
+##
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "username":"tsedniya@gmail.com",
+    "password":"12345678"
+}
+
+
 ## Get /
 
 GET http://localhost:5000
+
 ###
+
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username":"tsedniya@gmail.com",
+    "password":"12345678"
+}
+
+
