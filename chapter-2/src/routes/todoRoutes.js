@@ -4,7 +4,9 @@ import db from '../db.js'
 const router = express.Router()
 
 //get all todos for logged-in user
-router.get('/',(req,res)=>{})
+router.get('/',(req,res)=>{
+    "message":"contat"
+})
 
 //create a new todo 
 router.post('/',(req,res)=>{})

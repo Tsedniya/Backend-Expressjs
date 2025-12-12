@@ -23,8 +23,9 @@ router.post('/register', (req, res)=>{
         const token = jwt.sign(
       { id: result.lastInsertRowid },
       process.env.JWT_SECRET,
-      { expiresIn: '24h' }
-    )
+      { expiresIn: '24h' })
+      res.json({token})
+    
     }catch(err){
         console.log(err.message)
         res.sendStatus(503)
