@@ -5,7 +5,7 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import authRoutes from './routes/authRoutes.js'
 import todoRoutes from './routes/todoRoutes.js'
-
+import authMiddleware from './middleware/authMiddleware.js'
 
 
 const app = express();
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth',authRoutes)
-app.use('/todo',todoRoutes)
+app.use('/todo', authMiddleware ,todoRoutes)
 
 app.listen(PORT, () => {
   console.log(`server has started on port: ${PORT}`);
