@@ -5,7 +5,6 @@ const router = express.Router()
 
 //get all todos for logged-in user
 router.get('/',(req,res)=>{
-    "message":"contat"
 })
 
 //create a new todo 
