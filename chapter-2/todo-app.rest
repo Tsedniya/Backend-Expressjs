@@ -2,7 +2,7 @@ POST http://localhost:5003/auth/login
 Content-Type: application/json
 
 {
-  "username": "bellu",
+  "username": "bell",
   "password": "09006543"
 }
 
@@ -15,7 +15,7 @@ POST http://localhost:5003/auth/register
 Content-Type: application/json
 
 {
-  "username": "bellu",
-  "password": "09006543"
+  "username": "nunu",
+  "password": "12345678"
 }
 
