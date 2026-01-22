@@ -1,0 +1,24 @@
+{
+  "name": "chapter-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch --env-file=.env --experimental-strip-types --experimental-sqlite ./src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A dockerized full stack todo application that uses a NodeJS backend, a PostgreSQL database, and Prisma ORM, JWT Authentication.",
+  "dependencies": {
+    "@prisma/client": "^7.2.0",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.17.1",
+    "prisma": "^7.2.0",
+    "sqlite3": "^5.1.7"
+  }
+}

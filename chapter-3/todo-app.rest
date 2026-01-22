@@ -1,0 +1,48 @@
+POST http://localhost:5003/auth/login
+Content-Type: application/json
+
+{
+  "username": "tsiman@gmail.com",
+  "password": "0000"
+}
+
+
+###
+GET http://localhost:5003
+
+###
+POST http://localhost:5003/auth/register
+Content-Type: application/json
+
+{
+  "username": "tsiman@gmail.com",
+  "password": "0000"
+}
+
+###
+GET http://localhost:5003/todos
+Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY4ODIzMzk1LCJleHAiOjE3Njg5MDk3OTV9.HA8JtGm_32EJkt_EuIvWyDDaRI0Rc4HHoheo3c21Q40
+
+###
+POST http://localhost:5003/todos
+Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY4ODIzMzk1LCJleHAiOjE3Njg5MDk3OTV9.HA8JtGm_32EJkt_EuIvWyDDaRI0Rc4HHoheo3c21Q40
+Content-Type: application/json
+
+{
+  "task": "finish project"
+  
+}
+
+###
+PUT http://localhost:5003/todos/2?page=4
+Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY4ODIzMzk1LCJleHAiOjE3Njg5MDk3OTV9.HA8JtGm_32EJkt_EuIvWyDDaRI0Rc4HHoheo3c21Q40
+Content-Type: application/json
+
+{
+  "completed": 1
+  
+}
+
+###
+DELETE  http://localhost:5003/todos/2
+Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY4ODIzMzk1LCJleHAiOjE3Njg5MDk3OTV9.HA8JtGm_32EJkt_EuIvWyDDaRI0Rc4HHoheo3c21Q40
