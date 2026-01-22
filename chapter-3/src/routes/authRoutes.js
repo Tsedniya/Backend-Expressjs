@@ -6,7 +6,7 @@ import db from '../db.js'
 const router = express.Router()
 
 // Register a new user endpoing /auth/register
-router.post('/register', (req, res) => {
+router.post('/register', async(req, res) => {
     const { username, password } = req.body
     // save the username and an irreversibly encrypted password
     // save gilgamesh@gmail.com | aklsdjfasdf.asdf..qwe..q.we...qwe.qw.easd
@@ -16,16 +16,23 @@ router.post('/register', (req, res) => {
 
     // save the new user and hashed password to the db
     try {
-        const insertUser = db.prepare(`INSERT INTO users (username, password) VALUES (?, ?)`)
-        const result = insertUser.run(username, hashedPassword)
-
+        const user = await prisma.user.create({
+            data:{
+                username,
+                password:hashedPassword
+            }
+        })
         // now that we have a user, I want to add their first todo for them
         const defaultTodo = `Hello :) Add your first todo!`
-        const insertTodo = db.prepare(`INSERT INTO todos (user_id, task) VALUES (?, ?)`)
-        insertTodo.run(result.lastInsertRowid, defaultTodo)
-
+        await prisma.todo.create({
+            data:{
+                task:defaultTodo,
+                userId:user.id
+            }
+           
+        })
         // create a token
-        const token = jwt.sign({ id: result.lastInsertRowid }, process.env.JWT_SECRET, { expiresIn: '24h' })
+        const token = jwt.sign({ id: user.id}, process.env.JWT_SECRET, { expiresIn: '24h' })
         res.json({ token })
     } catch (err) {
         console.log(err.message)
