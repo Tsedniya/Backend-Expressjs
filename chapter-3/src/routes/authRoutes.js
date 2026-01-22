@@ -2,6 +2,7 @@ import express from 'express'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import db from '../db.js'
+import prisma from '../prismaClient.js'
 
 const router = express.Router()
 
@@ -40,7 +41,7 @@ router.post('/register', async(req, res) => {
     }
 })
 
-router.post('/login', (req, res) => {
+router.post('/login', async(req, res) => {
     // we get their email, and we look up the password associated with that email in the database
     // but we get it back and see it's encrypted, which means that we cannot compare it to the one the user just used trying to login
     // so what we can to do, is again, one way encrypt the password the user just entered
@@ -48,9 +49,11 @@ router.post('/login', (req, res) => {
     const { username, password } = req.body
 
     try {
-        const getUser = db.prepare('SELECT * FROM users WHERE username = ?')
-        const user = getUser.get(username)
-
+        const user = await prisma.user.findUnique({
+            where:{
+                username:username
+            }
+        })
         // if we cannot find a user associated with that username, return out from the function
         if (!user) { return res.status(404).send({ message: "User not found" }) }
 
