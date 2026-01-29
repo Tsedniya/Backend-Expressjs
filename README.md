@@ -32,6 +32,3 @@ It follows a clean structure commonly used in real backend projects.
 - **JWT** 
 
 ---
-
-## 📁 Project Structure
-
