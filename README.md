@@ -18,8 +18,6 @@ This backend application is built with:
 - Environment variables for configuration
 - Docker
 
-It follows a clean structure commonly used in real backend projects.
-
 ---
 
 ## 🧰 Tech Stack
