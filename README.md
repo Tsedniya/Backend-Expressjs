@@ -2,8 +2,6 @@
 
 This repository contains the backend project I built:
 
-🎥 Backend Full Course | NodeJS, ExpressJS, PostgreSQL, Prisma & Docker  
-
 The project focuses on building a real-world backend API using modern tools and best practices.
 
 ---
